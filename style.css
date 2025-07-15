@@ -1,0 +1,541 @@
+/* ========== サンプル表示バー ========== */
+.sample-notice {
+  background-color: #f8bbd0; /* やさしいピンク */
+  color: #fff;
+  text-align: center;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  /* letter-spacing: 0.05em; */ /* 文字間を少し広げたい場合 */
+}
+
+/* ========== 固定ヘッダーエリア（新規追加） ========== */
+.fixed-header-area {
+  position: fixed; /* このエリア全体を固定 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* 他の要素より手前に表示 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 影をこちらに移動 */
+}
+
+/* ========== 基本設定 ========== */
+body {
+  margin: 0;
+  /* 全体のフォントをZen Maru Gothicに変更 */
+  font-family: "Zen Maru Gothic", sans-serif;
+  color: #5d5d5d; /* 少し柔らかい黒色に */
+  background-color: #fffafc;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== ヘッダー ========== */
+.header {
+  background-color: rgba(255, 255, 255, 0.8); /* 少し透明感のある白に */
+  backdrop-filter: blur(10px); /* すりガラス効果 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: fixed; /* ヘッダーを上部に固定 */
+  width: 100%;
+  z-index: 10;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  /* ロゴ用フォントをKiwi Maruに変更 */
+  font-family: "Kiwi Maru", serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #f06292; /* 少し明るいピンクに */
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav ul {
+  display: flex;
+  gap: 30px;
+  font-weight: 700;
+}
+
+.header-nav a {
+  transition: color 0.3s;
+}
+
+.header-nav a:hover {
+  color: #f06292;
+}
+
+.contact-button {
+  margin-left: 30px;
+  padding: 10px 25px;
+  background-color: #ff80ab; /* 鮮やかなピンク */
+  color: #fff;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 10px rgba(255, 128, 171, 0.4); /* ボタンに影を追加 */
+}
+
+.contact-button:hover {
+  background-color: #f50057;
+  transform: translateY(-2px); /* ホバー時に少し浮き上がる動き */
+  box-shadow: 0 6px 12px rgba(255, 128, 171, 0.6);
+}
+
+/* ========== メインビジュアル ========== */
+.main-visual {
+  /* padding-topを増やして、固定ヘッダーと重ならないように調整 */
+  padding-top: 102px; /* 注意書きバーの高さ＋ヘッダーの高さ */
+  height: 550px;
+  /* 新しい背景：SVGで作成したグラデーション */
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0),
+    radial-gradient(circle at 10% 20%, #f48fb1, transparent 50%),
+    radial-gradient(circle at 80% 90%, #fff9c4, transparent 50%),
+    radial-gradient(circle at 50% 50%, #e1f5fe, transparent 70%);
+  background-blend-mode: screen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* 波形デザインの基準位置にする */
+  overflow: hidden; /* 波形がはみ出ないように */
+}
+
+.main-visual-inner {
+  text-align: center;
+  color: #555;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 40px 60px;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.catch-copy p {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.catch-copy h1 {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.6;
+}
+
+/* メインビジュアルとコンテンツの区切りデザイン */
+.wave {
+  position: absolute;
+  bottom: -1px; /* 隙間ができないように */
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3e%3cpath fill='%23fffafc' fill-opacity='1' d='M0,192L80,176C160,160,320,128,480,128C640,128,800,160,960,170.7C1120,181,1280,171,1360,165.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z'%3e%3c/path%3e%3c/svg%3e");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* ========== 共通セクション設定 ========== */
+.section-container {
+  padding: 80px 15px;
+}
+
+.section-inner,
+.concept-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative; /* 装飾の基準位置 */
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #f06292;
+}
+
+.section-button-area {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.section-button {
+  padding: 12px 40px;
+  border: 2px solid #ff80ab;
+  color: #ff80ab;
+  font-weight: bold;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.section-button:hover {
+  background-color: #ff80ab;
+  color: #fff;
+}
+
+.bg-light-pink {
+  background-color: #fdf6f8;
+  overflow: hidden; /* 装飾がはみ出ないように */
+}
+
+/* ========== お知らせ ========== */
+.news-list {
+  border-top: 1px solid #eee;
+}
+
+.news-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.3s;
+}
+
+.news-item:hover {
+  background-color: #fff;
+}
+
+.news-date {
+  font-size: 15px;
+  color: #999;
+  margin-right: 20px;
+  flex-shrink: 0; /* 日付が縮まないように */
+}
+
+.news-category {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+  color: #fff;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.news-cat-info {
+  background-color: #64b5f6; /* お知らせ：水色 */
+}
+
+.news-cat-recruit {
+  background-color: #81c784; /* 採用：緑色 */
+}
+
+.news-title {
+  margin: 0;
+  font-weight: bold;
+  color: #555;
+}
+
+/* ========== 私たちの想い ========== */
+.concept-inner {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  position: relative; /* z-indexを機能させるための基準 */
+}
+
+.concept-image {
+  flex: 1;
+  text-align: center;
+  position: relative; /* 重ね順のコンテキストを作成 */
+  z-index: 1; /* 円より手前に表示 */
+}
+
+/* 以前の .concept-image img は .concept-svg-image に変更済み */
+
+.concept-text {
+  flex: 1.5;
+  position: relative; /* 重ね順のコンテキストを作成 */
+  z-index: 1; /* 円より手前に表示 */
+}
+
+.concept-text .section-title {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.concept-catch {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.concept-description {
+  line-height: 2;
+}
+
+/* 装飾用の円 */
+.deco-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: ふわふわ 4s ease-in-out infinite alternate;
+  z-index: 0; /* 一番後ろに配置 */
+}
+.circle-1 {
+  width: 100px;
+  height: 100px;
+  background-color: #ffd1dc; /* ピンク */
+  top: -20px;
+  left: 5%;
+  animation-delay: 0.5s;
+}
+.circle-2 {
+  width: 60px;
+  height: 60px;
+  background-color: #fff9c4; /* 黄色 */
+  bottom: -10px;
+  right: 10%;
+  animation-delay: 0s;
+}
+.circle-3 {
+  width: 80px;
+  height: 80px;
+  background-color: #c8e6c9; /* 緑 */
+  top: 50%;
+  right: -40px;
+  animation-delay: 1s;
+}
+
+/* 「私たちの想い」セクションのSVG画像スタイル */
+.concept-svg-image {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  animation: ふわふわ 3s ease-in-out infinite alternate;
+}
+
+/* ふわふわ動くアニメーションの定義は変更なし */
+@keyframes ふわふわ {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ========== サービス内容 ========== */
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列のグリッドレイアウト */
+  gap: 30px; /* カード間の余白 */
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* アイコンの色設定 */
+.icon-pink {
+  background-color: #fce4ec;
+  color: #ec407a;
+}
+.icon-green {
+  background-color: #e8f5e9;
+  color: #66bb6a;
+}
+.icon-blue {
+  background-color: #e3f2fd;
+  color: #42a5f5;
+}
+
+.service-icon-wrapper svg {
+  width: 44px;
+  height: 44px;
+  stroke-width: 1.5; /* アイコンの線の太さ */
+}
+
+.service-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.service-description {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #666;
+  margin: 0;
+}
+
+/* ========== ご利用の流れ ========== */
+.flow-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flow-item {
+  width: 28%;
+  text-align: center;
+}
+
+.flow-step-num {
+  font-size: 14px;
+  font-weight: bold;
+  color: #f06292;
+  margin-bottom: 15px;
+}
+
+.flow-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdf6f8;
+  color: #f06292;
+}
+.flow-icon svg {
+  width: 40px;
+  height: 40px;
+  stroke-width: 1.5;
+}
+
+.flow-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.flow-description {
+  font-size: 14px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.flow-arrow {
+  width: 8%;
+  height: 20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-right' width='44' height='44' viewBox='0 0 24 24' stroke-width='1.5' stroke='%23f06292' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M5 12l14 0' /%3E%3Cpath d='M13 18l6 -6' /%3E%3Cpath d='M13 6l6 6' /%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 60px;
+  opacity: 0.5;
+}
+
+/* ========== フッター ========== */
+.footer {
+  background-color: #fce4ec; /* 薄いピンク */
+  color: #885e6b; /* 文字色 */
+  padding: 60px 15px 20px;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-logo a {
+  font-family: "Kiwi Maru", serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: #e91e63; /* 少し濃いピンク */
+}
+
+.footer-address {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 15px;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-nav ul li {
+  margin-bottom: 15px;
+}
+
+.footer-nav a {
+  font-size: 15px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.footer-nav a:hover {
+  color: #e91e63;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 12px;
+}
+
+/* ========== ページトップへ戻るボタン ========== */
+.page-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #ff80ab;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* 最初は非表示 */
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s;
+}
+
+.page-top-button.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.page-top-button:hover {
+  background-color: #f50057;
+  transform: translateY(-3px);
+}

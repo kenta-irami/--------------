@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ひだまり訪問看護ステーション</title>
+    <!-- Google Fonts (変更後) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Zen+Maru+Gothic:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="fixed-header-area">
+      <div class="sample-notice">
+        このページはデザインサンプルです。実在の事業所・団体とは関係ありません。
+      </div>
+      <!-- ========== ヘッダー ========== -->
+      <header class="header">
+        <div class="header-inner">
+          <h1 class="logo">
+            <a href="#">ひだまり訪問看護ステーション</a>
+          </h1>
+          <nav class="header-nav">
+            <ul>
+              <li><a href="#">私たちの想い</a></li>
+              <li><a href="#">サービス内容</a></li>
+              <li><a href="#">ご利用案内</a></li>
+              <li><a href="#">採用情報</a></li>
+            </ul>
+            <a href="#" class="contact-button">お問い合わせ</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <!-- ========== メインビジュアル ========== -->
+      <section class="main-visual">
+        <div class="main-visual-inner">
+          <div class="catch-copy">
+            <p>心に寄り添い、安心を届ける。</p>
+            <h1>ひだまりのような看護を、<br />あなたのご自宅へ。</h1>
+          </div>
+        </div>
+        <!-- 波形の区切りデザインを追加 -->
+        <div class="wave"></div>
+      </section>
+    </main>
+
+    <!-- JavaScriptは変更なし -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      ScrollReveal().reveal(".catch-copy", {
+        delay: 500,
+        duration: 1600,
+        origin: "bottom",
+        distance: "50px",
+        reset: false,
+      });
+    </script>
+    <!-- ========== お知らせ ========== -->
+    <section class="section-container">
+      <div class="section-inner">
+        <h2 class="section-title">おしらせ</h2>
+        <div class="news-list">
+          <a href="#" class="news-item">
+            <time class="news-date" datetime="2023-10-26">2023.10.26</time>
+            <span class="news-category news-cat-info">お知らせ</span>
+            <p class="news-title">年末年始の営業について</p>
+          </a>
+          <a href="#" class="news-item">
+            <time class="news-date" datetime="2023-10-15">2023.10.15</time>
+            <span class="news-category news-cat-recruit">採用情報</span>
+            <p class="news-title">看護師・理学療法士の募集を開始しました</p>
+          </a>
+          <a href="#" class="news-item">
+            <time class="news-date" datetime="2023-09-01">2023.09.01</time>
+            <span class="news-category news-cat-info">お知らせ</span>
+            <p class="news-title">ホームページを公開しました</p>
+          </a>
+        </div>
+        <div class="section-button-area">
+          <a href="#" class="section-button">一覧を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 私たちの想い ========== -->
+    <section class="section-container bg-light-pink">
+      <div class="concept-inner">
+        <!-- 装飾用の円 -->
+        <div class="deco-circle circle-1"></div>
+        <div class="deco-circle circle-2"></div>
+        <div class="deco-circle circle-3"></div>
+
+        <div class="concept-image">
+          <!-- SVG画像に差し替え -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 200 200"
+            class="concept-svg-image"
+          >
+            <defs>
+              <linearGradient
+                id="svg-grad-pink"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color: #f8bbd0; stop-opacity: 1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #f06292; stop-opacity: 1"
+                />
+              </linearGradient>
+              <linearGradient
+                id="svg-grad-yellow"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color: #fff9c4; stop-opacity: 1"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #ffeb3b; stop-opacity: 1"
+                />
+              </linearGradient>
+            </defs>
+            <g transform="translate(10, 10)">
+              <path
+                fill="url(#svg-grad-pink)"
+                d="M128.1,32.3c-18.4-18.4-48.3-18.4-66.7,0C43.1,50.6,43,79.8,61.2,98.2l38.2,38.2c0.4,0.4,1,0.4,1.4,0l38.2-38.2 C157.3,79.9,157.4,50.7,139.1,32.3C139.1,32.3,128.1,32.3,128.1,32.3z"
+                transform="translate(10, 35) scale(0.8) rotate(-10 100 100)"
+              />
+              <path
+                fill="#e3f2fd"
+                d="M172.5,90.2H27.5c-4.1,0-7.5-3.4-7.5-7.5V75c0-4.1,3.4-7.5,7.5-7.5h145c4.1,0,7.5,3.4,7.5,7.5v7.7 C180,86.8,176.6,90.2,172.5,90.2z"
+              />
+              <path
+                fill="#bbdefb"
+                d="M165.7,175.2H34.3c-4.1,0-7.5-3.4-7.5-7.5v-70c0-4.1,3.4-7.5,7.5-7.5h131.4c4.1,0,7.5,3.4,7.5,7.5v70 C173.2,171.8,169.8,175.2,165.7,175.2z"
+              />
+              <path fill="#90caf9" d="M180,90.2H20L100,20.2L180,90.2z" />
+              <rect x="75" y="110" width="50" height="65.2" fill="#e3f2fd" />
+            </g>
+          </svg>
+        </div>
+        <div class="concept-text">
+          <h2 class="section-title">私たちの想い</h2>
+          <p class="concept-catch">
+            住み慣れたご自宅で、<br />
+            “その人らしい”毎日を。
+          </p>
+          <p class="concept-description">
+            私たちは、利用者様一人ひとりの気持ちに寄り添い、心と身体の両面からサポートします。<br />
+            「ひだまり」のような温かいコミュニケーションを大切に、ご家族様とも連携を取りながら、安心して過ごせる療養生活を支えます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== サービス内容 ========== -->
+    <section class="section-container">
+      <div class="section-inner">
+        <h2 class="section-title">サービス内容</h2>
+        <div class="service-list">
+          <!-- サービスカード1: 訪問看護 -->
+          <a href="#" class="service-card">
+            <div class="service-icon-wrapper icon-pink">
+              <!-- アイコン(SVG) -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-heart-plus"
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
+                />
+                <path d="M16 19h6" />
+                <path d="M19 16v6" />
+              </svg>
+            </div>
+            <h3 class="service-title">訪問看護</h3>
+            <p class="service-description">
+              看護師がご自宅に伺い、健康状態の確認や医療処置、療養生活のアドバイスなどを行います。
+            </p>
+          </a>
+          <!-- サービスカード2: リハビリ -->
+          <a href="#" class="service-card">
+            <div class="service-icon-wrapper icon-green">
+              <!-- アイコン(SVG) -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-stretching"
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M16 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                <path d="M5 20l5 -5l-1 -1l-4 4l-1 -1l4 -4l-1 -1l-4 4" />
+                <path d="M15 20l4 -4l-1 -1l-3 3l-1 -1l3 -3l-1 -1l-3 3" />
+                <path d="M5 5l4 4l-1 1l-3 -3l-1 1l3 3l-1 1l-3 -3" />
+                <path d="M15 5l4 4" />
+              </svg>
+            </div>
+            <h3 class="service-title">リハビリテーション</h3>
+            <p class="service-description">
+              理学療法士や作業療法士が、身体機能の回復・維持を目的とした専門的なリハビリを提供します。
+            </p>
+          </a>
+          <!-- サービスカード3: 24時間対応 -->
+          <a href="#" class="service-card">
+            <div class="service-icon-wrapper icon-blue">
+              <!-- アイコン(SVG) -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-phone-call"
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"
+                />
+                <path d="M15 7a2 2 0 0 1 2 2" />
+                <path d="M15 3a6 6 0 0 1 6 6" />
+              </svg>
+            </div>
+            <h3 class="service-title">24時間対応</h3>
+            <p class="service-description">
+              緊急時も安心。24時間365日、お電話でのご相談や緊急訪問に対応できる体制を整えています。
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ご利用の流れ ========== -->
+    <section class="section-container">
+      <div class="section-inner">
+        <h2 class="section-title">ご利用の流れ</h2>
+        <div class="flow-list">
+          <!-- ステップ1 -->
+          <div class="flow-item">
+            <div class="flow-step-num">STEP 01</div>
+            <div class="flow-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-message-circle-question"
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M15.023 19.483a9.063 9.063 0 0 1 -12.023 -12.023a9.063 9.063 0 0 1 12.023 12.023"
+                />
+                <path d="M19 22v-3" />
+                <path d="M19 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
+              </svg>
+            </div>
+            <h3 class="flow-title">お問い合わせ・ご相談</h3>
+            <p class="flow-description">
+              まずはお電話やお問い合わせフォームからお気軽にご相談ください。
+            </p>
+          </div>
+          <!-- 矢印 -->
+          <div class="flow-arrow"></div>
+          <!-- ステップ2 -->
+          <div class="flow-item">
+            <div class="flow-step-num">STEP 02</div>
+            <div class="flow-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-users"
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
+                <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
+              </svg>
+            </div>
+            <h3 class="flow-title">ご訪問・ご面談</h3>
+            <p class="flow-description">
+              担当者がご自宅に伺い、お身体の状態やご要望を詳しくお聞きします。
+            </p>
+          </div>
+          <!-- 矢印 -->
+          <div class="flow-arrow"></div>
+          <!-- ステップ3 -->
+          <div class="flow-item">
+            <div class="flow-step-num">STEP 03</div>
+            <div class="flow-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-file-check"
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                <path
+                  d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
+                />
+                <path d="M9 15l2 2l4 -4" />
+              </svg>
+            </div>
+            <h3 class="flow-title">ご契約・計画作成</h3>
+            <p class="flow-description">
+              サービス内容にご納得いただけましたら契約を結び、訪問計画を作成します。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== フッター ========== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <a href="#">ひだまり訪問看護ステーション</a>
+          <p class="footer-address">
+            〒123-4567 東京都ひだまり区にこにこ町1-2-3<br />
+            TEL: 03-1234-5678
+          </p>
+        </div>
+        <div class="footer-nav">
+          <ul>
+            <li><a href="#">私たちの想い</a></li>
+            <li><a href="#">サービス内容</a></li>
+            <li><a href="#">ご利用案内</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">事業所概要</a></li>
+            <li><a href="#">採用情報</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <small>© ひだまり訪問看護ステーション All Rights Reserved.</small>
+      </div>
+    </footer>
+
+    <!-- ========== ページトップへ戻るボタン ========== -->
+    <a href="#" class="page-top-button">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-arrow-up"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M12 5l0 14" />
+        <path d="M18 11l-6 -6" />
+        <path d="M6 11l6 -6" />
+      </svg>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      // ふわっと表示させるアニメーション（既存）
+      ScrollReveal().reveal(".catch-copy", {
+        delay: 500,
+        duration: 1600,
+        origin: "bottom",
+        distance: "50px",
+        reset: false,
+      });
+
+      // ページトップへ戻るボタンの表示/非表示を制御するJS（新規追加）
+      const pageTopButton = document.querySelector(".page-top-button");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          // 300pxスクロールしたら表示
+          pageTopButton.classList.add("is-visible");
+        } else {
+          pageTopButton.classList.remove("is-visible");
+        }
+      });
+    </script>
+  </body>
+</html>
