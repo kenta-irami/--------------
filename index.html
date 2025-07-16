@@ -19,23 +19,44 @@
       <div class="sample-notice">
         このページはデザインサンプルです。実在の事業所・団体とは関係ありません。
       </div>
+
       <!-- ========== ヘッダー ========== -->
       <header class="header">
         <div class="header-inner">
           <h1 class="logo">
             <a href="#">ひだまり訪問看護ステーション</a>
           </h1>
-          <nav class="header-nav">
+          <!-- PC用のナビゲーション -->
+          <nav class="header-nav-pc">
             <ul>
-              <li><a href="#">私たちの想い</a></li>
-              <li><a href="#">サービス内容</a></li>
-              <li><a href="#">ご利用案内</a></li>
+              <li><a href="#concept">私たちの想い</a></li>
+              <li><a href="#service">サービス内容</a></li>
+              <li><a href="#flow">ご利用案内</a></li>
               <li><a href="#">採用情報</a></li>
             </ul>
-            <a href="#" class="contact-button">お問い合わせ</a>
+            <a href="contact.html" class="contact-button">お問い合わせ</a>
           </nav>
+          <!-- ハンバーガーメニューボタン -->
+          <button class="hamburger" id="js-hamburger">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
         </div>
       </header>
+
+      <!-- スマホ用のナビゲーション (headerの外に配置) -->
+      <div class="sp-nav" id="js-sp-nav">
+        <nav>
+          <ul>
+            <li><a href="#concept">私たちの想い</a></li>
+            <li><a href="#service">サービス内容</a></li>
+            <li><a href="#flow">ご利用案内</a></li>
+            <li><a href="#">採用情報</a></li>
+          </ul>
+        </nav>
+        <a href="contact.html" class="contact-button">お問い合わせ</a>
+      </div>
     </div>
 
     <main>
@@ -52,17 +73,6 @@
       </section>
     </main>
 
-    <!-- JavaScriptは変更なし -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script>
-      ScrollReveal().reveal(".catch-copy", {
-        delay: 500,
-        duration: 1600,
-        origin: "bottom",
-        distance: "50px",
-        reset: false,
-      });
-    </script>
     <!-- ========== お知らせ ========== -->
     <section class="section-container">
       <div class="section-inner">
@@ -90,6 +100,7 @@
       </div>
     </section>
 
+    <span id="concept" class="anchor"></span>
     <!-- ========== 私たちの想い ========== -->
     <section class="section-container bg-light-pink">
       <div class="concept-inner">
@@ -172,6 +183,7 @@
       </div>
     </section>
 
+    <span id="service" class="anchor"></span>
     <!-- ========== サービス内容 ========== -->
     <section class="section-container">
       <div class="section-inner">
@@ -268,6 +280,7 @@
       </div>
     </section>
 
+    <span id="flow" class="anchor"></span>
     <!-- ========== ご利用の流れ ========== -->
     <section class="section-container">
       <div class="section-inner">
@@ -379,9 +392,9 @@
         </div>
         <div class="footer-nav">
           <ul>
-            <li><a href="#">私たちの想い</a></li>
-            <li><a href="#">サービス内容</a></li>
-            <li><a href="#">ご利用案内</a></li>
+            <li><a href="#concept">私たちの想い</a></li>
+            <li><a href="#service">サービス内容</a></li>
+            <li><a href="#flow">ご利用案内</a></li>
           </ul>
           <ul>
             <li><a href="#">事業所概要</a></li>
@@ -419,7 +432,17 @@
     <!-- JavaScript -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-      // ふわっと表示させるアニメーション（既存）
+      // --- スクロールアニメーション設定 ---
+      // 共通の設定
+      const sr_common_config = {
+        duration: 1000,
+        origin: "bottom",
+        distance: "50px",
+        reset: false,
+        viewFactor: 0.4, // 要素が40%見えたらアニメーション開始
+      };
+
+      // メインビジュアルのキャッチコピー
       ScrollReveal().reveal(".catch-copy", {
         delay: 500,
         duration: 1600,
@@ -428,11 +451,61 @@
         reset: false,
       });
 
-      // ページトップへ戻るボタンの表示/非表示を制御するJS（新規追加）
+      // 各セクションのタイトル
+      ScrollReveal().reveal(".section-title", sr_common_config);
+
+      // お知らせリスト
+      ScrollReveal().reveal(".news-item", {
+        ...sr_common_config,
+        interval: 150,
+      });
+
+      // 私たちの想い
+      ScrollReveal().reveal(".concept-image", {
+        ...sr_common_config,
+        origin: "left",
+      });
+      ScrollReveal().reveal(".concept-text", {
+        ...sr_common_config,
+        origin: "right",
+        delay: 200,
+      });
+
+      // サービス内容
+      ScrollReveal().reveal(".service-card", {
+        ...sr_common_config,
+        interval: 200,
+      });
+
+      // ご利用の流れ
+      ScrollReveal().reveal(".flow-item", {
+        ...sr_common_config,
+        interval: 200,
+      });
+
+      // ▼▼▼ ハンバーガーメニューの開閉処理を修正 ▼▼▼
+      const hamburger = document.getElementById("js-hamburger");
+      const spNav = document.getElementById("js-sp-nav"); // 対象を sp-nav に変更
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("is-active");
+        spNav.classList.toggle("is-active"); // 対象を sp-nav に変更
+      });
+
+      // メニュー内のリンクをクリックしたらメニューを閉じる
+      spNav.querySelectorAll("a").forEach((link) => {
+        // 対象を sp-nav に変更
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("is-active");
+          spNav.classList.remove("is-active"); // 対象を sp-nav に変更
+        });
+      });
+      // ▲▲▲ ここまで修正 ▲▲▲
+
+      // --- ページトップへ戻るボタンの表示/非表示 ---
       const pageTopButton = document.querySelector(".page-top-button");
       window.addEventListener("scroll", () => {
         if (window.scrollY > 300) {
-          // 300pxスクロールしたら表示
           pageTopButton.classList.add("is-visible");
         } else {
           pageTopButton.classList.remove("is-visible");

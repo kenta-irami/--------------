@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ページタイトルをお問い合わせに変更 -->
+    <title>お問い合わせ | ひだまり訪問看護ステーション</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@500&family=Zen+Maru+Gothic:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS (index.htmlと同じものを読み込む) -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="fixed-header-area">
+      <div class="sample-notice">
+        このページはデザインサンプルです。実在の事業所・団体とは関係ありません。
+      </div>
+      <!-- ========== ヘッダー (トップページへのリンクを修正) ========== -->
+      <header class="header">
+        <div class="header-inner">
+          <h1 class="logo">
+            <a href="index.html">ひだまり訪問看護ステーション</a>
+          </h1>
+          <!-- PC用のナビゲーション -->
+          <nav class="header-nav-pc">
+            <ul>
+              <li><a href="index.html#concept">私たちの想い</a></li>
+              <li><a href="index.html#service">サービス内容</a></li>
+              <li><a href="index.html#flow">ご利用案内</a></li>
+              <li><a href="#">採用情報</a></li>
+            </ul>
+            <a href="contact.html" class="contact-button">お問い合わせ</a>
+          </nav>
+          <!-- ハンバーガーメニューボタン -->
+          <button class="hamburger" id="js-hamburger">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- スマホ用のナビゲーション -->
+      <div class="sp-nav" id="js-sp-nav">
+        <nav>
+          <ul>
+            <li><a href="index.html#concept">私たちの想い</a></li>
+            <li><a href="index.html#service">サービス内容</a></li>
+            <li><a href="index.html#flow">ご利用案内</a></li>
+            <li><a href="#">採用情報</a></li>
+          </ul>
+        </nav>
+        <a href="contact.html" class="contact-button">お問い合わせ</a>
+      </div>
+    </div>
+
+    <main>
+      <!-- ========== 下層ページ用メインビジュアル ========== -->
+      <section class="subpage-main-visual">
+        <div class="subpage-main-visual-inner">
+          <h1>お問い合わせ</h1>
+          <p>Contact</p>
+        </div>
+        <div class="wave"></div>
+      </section>
+
+      <!-- ========== お問い合わせフォーム ========== -->
+      <section class="section-container">
+        <div class="section-inner form-container">
+          <p class="form-lead">
+            サービスに関するご質問やご相談など、お気軽にお問い合わせください。<br />
+            担当者より、3営業日以内にご返信いたします。
+          </p>
+
+          <form action="#" method="POST" class="contact-form">
+            <div class="form-grid-group">
+              <div class="form-item">
+                <label for="name" class="form-label"
+                  >お名前<span class="form-required">必須</span></label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  required
+                />
+              </div>
+              <div class="form-item">
+                <label for="email" class="form-label"
+                  >メールアドレス<span class="form-required">必須</span></label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  required
+                />
+              </div>
+              <div class="form-item">
+                <label for="tel" class="form-label">電話番号</label>
+                <input type="tel" id="tel" name="tel" class="form-input" />
+              </div>
+            </div>
+
+            <div class="form-item">
+              <!-- ← 「form-item-fullwidth」クラスを追加 -->
+              <label for="message" class="form-label"
+                >お問い合わせ内容<span class="form-required">必須</span></label
+              >
+              <textarea
+                id="message"
+                name="message"
+                class="form-textarea"
+                rows="8"
+                required
+              ></textarea>
+            </div>
+            <div class="form-submit-button-area">
+              <button type="submit" class="form-submit-button">送信する</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== フッター (トップページへのリンクを修正) ========== -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <a href="index.html">ひだまり訪問看護ステーション</a>
+          <p class="footer-address">
+            〒123-4567 東京都ひだまり区にこにこ町1-2-3<br />
+            TEL: 03-1234-5678
+          </p>
+        </div>
+        <div class="footer-nav">
+          <ul>
+            <li><a href="index.html#concept">私たちの想い</a></li>
+            <li><a href="index.html#service">サービス内容</a></li>
+            <li><a href="index.html#flow">ご利用案内</a></li>
+          </ul>
+          <ul>
+            <li><a href="#">事業所概要</a></li>
+            <li><a href="#">採用情報</a></li>
+            <li><a href="#">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <small>© ひだまり訪問看護ステーション All Rights Reserved.</small>
+      </div>
+    </footer>
+
+    <!-- ========== ページトップへ戻るボタン ========== -->
+    <a href="#" class="page-top-button">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-arrow-up"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M12 5l0 14" />
+        <path d="M18 11l-6 -6" />
+        <path d="M6 11l6 -6" />
+      </svg>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+      // ハンバーガーメニュー (トップページと同じもの)
+      const hamburger = document.getElementById("js-hamburger");
+      const spNav = document.getElementById("js-sp-nav");
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("is-active");
+        spNav.classList.toggle("is-active");
+      });
+      spNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("is-active");
+          spNav.classList.remove("is-active");
+        });
+      });
+
+      // ページトップへ戻るボタン (トップページと同じもの)
+      const pageTopButton = document.querySelector(".page-top-button");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          pageTopButton.classList.add("is-visible");
+        } else {
+          pageTopButton.classList.remove("is-visible");
+        }
+      });
+    </script>
+  </body>
+</html>
